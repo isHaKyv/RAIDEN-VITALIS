@@ -1,0 +1,70 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333; /* Dark background for contrast */
+    color: white;
+    position: fixed; /* Keeps navbar fixed at the top */
+    width: 100%; /* Spans full width */
+    top: 0; /* Sticks to the top */
+    z-index: 1000; /* Ensures it's always above other content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between multiple logos */
+}
+
+.logo img {
+    height: 40px; /* Standard logo height */
+    cursor: pointer; /* Indicates interactivity */
+}
+
+/* Navigation Menu */
+.navbar nav ul {
+    list-style: none; /* Removes bullet points */
+    display: flex;
+    gap: 15px; /* Adds spacing between menu items */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+/* Navigation Links */
+.navbar nav ul li a {
+    color: white; /* White text for dark background */
+    text-decoration: none; /* Removes underline */
+    padding: 8px 12px; /* Adds padding for clickable area */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    border-radius: 5px; /* Slightly rounded edges for modern look */
+    font-size: 1em; /* Standard text size */
+}
+
+/* Button-Style Links */
+.navbar nav ul li a.button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    font-weight: bold; /* Emphasize button links */
+}
+
+/* Hover Effect */
+.navbar nav ul li a:hover {
+    background-color: #555; /* Changes background on hover */
+}
+
+/* Responsive Navbar Adjustments */
+@media (max-width: 768px) {
+    .navbar nav ul {
+        flex-direction: column; /* Stacks menu items vertically */
+        align-items: flex-start; /* Aligns items to the left */
+        gap: 10px; /* Reduces gap between items */
+    }
+
+    .navbar nav ul li {
+        margin-bottom: 10px; /* Adds spacing between items */
+    }
+}

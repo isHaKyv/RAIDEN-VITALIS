@@ -1,0 +1,184 @@
+/* Container Styling */
+.analysis-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* Box Styling */
+.analysis-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 20px 40px;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Title Styling */
+.analysis-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333333;
+}
+
+/* Content Section */
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Body Image Styling */
+.body-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+}
+
+/* Measurements Section */
+.measurements-section {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.measurements-list {
+    list-style: none;
+    padding: 0;
+}
+
+.measurement-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #555555;
+}
+
+.measurement-icon {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.measurement-value {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333333;
+}
+
+/* Buttons Section */
+.buttons-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.start-button,
+.stop-button,
+.next-button {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-button {
+    background-color: #28a745;
+}
+
+.start-button:hover {
+    background-color: #218838;
+}
+
+.stop-button {
+    background-color: #6c757d;
+}
+
+.stop-button:hover {
+    background-color: #5a6268;
+}
+
+.next-button {
+    background-color: #007bff;
+}
+
+.next-button:hover {
+    background-color: #0056b3;
+}
+
+/* Circular Button */
+.stats-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.stats-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .body-section {
+        margin-bottom: 20px;
+    }
+
+    .measurements-section {
+        margin-left: 0;
+    }
+
+    .buttons-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

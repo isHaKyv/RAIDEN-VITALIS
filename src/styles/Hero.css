@@ -1,0 +1,87 @@
+.hero {
+    background-image: url('../assets/banner.png'); /* Replace with the correct image path */
+    background-size: cover; /* Ensures the background covers the entire section */
+    background-position: center;
+    height: 100vh; /* Takes full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    padding: 20px;
+    width: 100vw; /* Takes full viewport width */
+}
+
+/* Dark overlay for better text readability */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px; /* Restrict width to keep text readable */
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3em; /* Scales with screen size */
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.primary-button {
+    background-color: #007bff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2em; /* Adjusts heading size for smaller screens */
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .primary-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero-content h1 {
+        font-size: 3.5em; /* Adjusts heading size for larger screens */
+    }
+
+    .hero-content p {
+        font-size: 1.5em;
+    }
+
+    .primary-button {
+        font-size: 1.5em;
+        padding: 15px 30px;
+    }
+}

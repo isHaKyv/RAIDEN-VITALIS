@@ -1,0 +1,49 @@
+.delete-file-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.delete-file-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.delete-file-container ul {
+    width: 100%;
+    max-width: 600px;
+    list-style: none;
+    padding: 0;
+}
+
+.delete-file-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.delete-file-container button {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-file-container button:hover {
+    background-color: #c82333;
+}

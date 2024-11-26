@@ -1,0 +1,37 @@
+.contact-container {
+    display: flex; /* Coloca los elementos en fila */
+    height: 100vh; /* La vista ocupa toda la altura de la ventana */
+    width: 100vw; /* Asegura que la vista ocupe todo el ancho de la pantalla */
+}
+
+.contact-image {
+    flex: 1; /* La imagen ocupa exactamente la mitad izquierda */
+    background-image: url('../assets/conntactimg.jpg'); /* La imagen de fondo */
+    background-size: cover; /* La imagen se ajusta para cubrir todo el espacio */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No permite que la imagen se repita */
+}
+
+.contactr-info {
+    flex: 1; /* La información ocupa la mitad derecha */
+    display: flex;
+    flex-direction: column; /* Los textos se organizan en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    padding: 40px; /* Espaciado interno */
+    background-color: #ffffff; /* Fondo blanco para la información */
+    color: #333; /* Color de texto */
+}
+
+.contact-info h2 {
+    font-size: 1.8em; /* Tamaño de los encabezados */
+    margin-bottom: 10px;
+    color: #007bff; /* Azul para los encabezados */
+}
+
+.contact-info p {
+    font-size: 1.2em; /* Tamaño del texto */
+    color: #555; /* Gris para el texto */
+    margin-bottom: 15px;
+    line-height: 1.6; /* Espaciado entre líneas */
+}

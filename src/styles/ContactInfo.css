@@ -1,0 +1,46 @@
+.contact-info {
+    width: 100%;
+    background-image: url('../assets/PHOTO-2024-09-30-17-13-18-780x470.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+}
+
+.contact-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    z-index: 0;
+}
+
+.contact-info > div {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    color: white;
+}
+
+.location h3, .schedule h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.location p, .schedule p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #ffcc00;
+}
