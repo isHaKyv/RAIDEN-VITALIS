@@ -29,48 +29,29 @@ const Analysis = () => {
         };
 
         // WebSocket message handlers
-        wsPeso.onmessage = (event) => {
-            try {
-                if (isReceiving) {
-                    const data = JSON.parse(event.data);
-                    if (data.sensorType === 'peso') {
-                        updateSensorData('peso', data.value);
+        const setupWebSocket = (ws, sensorType) => {
+            ws.onmessage = (event) => {
+                try {
+                    if (isReceiving) {
+                        const data = JSON.parse(event.data);
+                        if (data.sensorType === sensorType) {
+                            updateSensorData(sensorType, data.value);
+                        }
                     }
+                } catch (error) {
+                    console.error(`Error processing data from ${sensorType}:`, error);
                 }
-            } catch (error) {
-                console.error('Error processing data from wsPeso:', error);
-            }
+            };
+
+            ws.onerror = () => console.error(`WebSocket connection error for ${sensorType}`);
+            ws.onclose = () => console.log(`WebSocket ${sensorType} closed`);
         };
 
-        wsOtros.onmessage = (event) => {
-            try {
-                if (isReceiving) {
-                    const data = JSON.parse(event.data);
-                    if (data.sensorType === 'altura') {
-                        updateSensorData('altura', data.value);
-                    } else if (data.sensorType === 'temperatura') {
-                        updateSensorData('temperaturaCorporal', data.value);
-                    }
-                }
-            } catch (error) {
-                console.error('Error processing data from wsOtros:', error);
-            }
-        };
+        setupWebSocket(wsPeso, 'peso');
+        setupWebSocket(wsOtros, 'altura');
+        setupWebSocket(wsOtros, 'temperaturaCorporal');
+        setupWebSocket(wsRespiratoria, 'frecuenciaRespiratoria');
 
-        wsRespiratoria.onmessage = (event) => {
-            try {
-                if (isReceiving) {
-                    const data = JSON.parse(event.data);
-                    if (data.sensorType === 'frecuenciaRespiratoria') {
-                        updateSensorData('frecuenciaRespiratoria', data.value);
-                    }
-                }
-            } catch (error) {
-                console.error('Error processing data from wsRespiratoria:', error);
-            }
-        };
-
-        // Cleanup WebSocket connections on component unmount
         return () => {
             wsPeso.close();
             wsOtros.close();
@@ -119,6 +100,23 @@ const Analysis = () => {
                 <div className="buttons-section">
                     <button className="save-button" onClick={handleSave}>Guardar</button>
                     <button className="next-button" onClick={handleNext}>Siguiente</button>
+                    <button
+                        className="stats-button"
+                        onClick={() => navigate('/stats')}
+                        style={{
+                            position: 'absolute',
+                            top: '10px',
+                            right: '10px',
+                            backgroundColor: '#007bff',
+                            color: '#fff',
+                            padding: '10px',
+                            borderRadius: '50%',
+                            border: 'none',
+                            cursor: 'pointer',
+                        }}
+                    >
+                        📊
+                    </button>
                 </div>
             </div>
         </div>

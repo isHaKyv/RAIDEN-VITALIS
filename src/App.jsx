@@ -8,7 +8,8 @@ import ContactInfo from './components/ContactInfo';
 import Directory from './components/Directory';
 import Analysis from './components/Analysis';
 import Contact from './components/contact';
-import Statistics from './components/Statistics';
+import Stats from './components/Stats'; // Route for the new "Estadísticas" button
+import Statistics from './components/Statistics'; // For the button in Analysis.jsx
 import PatientForm from './components/PatientForm';
 import AddFile from './components/AddFile';
 import DeleteFile from './components/DeleteFile';
@@ -21,27 +22,22 @@ import Register from './components/Register';
 import './App.css';
 
 function App() {
-    // Centralized state for patient files
-    const [patientFiles, setPatientFiles] = useState([
-        { id: 1, fullName: 'John Doe', dob: '1990-01-01', age: 32, needsAttention: false },
-        { id: 2, fullName: 'Jane Smith', dob: '1985-05-15', age: 37, needsAttention: true },
-    ]);
+    const [patientFiles, setPatientFiles] = useState([]);
 
-    // Authentication state
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [users, setUsers] = useState([]); // Store registered users
+    const [users, setUsers] = useState([]);
 
     return (
         <Router>
             <div className="App">
                 <Navbar />
                 <Routes>
-                     <Route
-                        path="/estadisticas"
-                        element={<Statistics patientFiles={patientFiles} />}
-                    />
 
-                    {/* Authentication */}
+                <Route path="/stats" element={<Stats />} />
+                
+                <Route path="/estadisticas" element={<Statistics />} />
+
+            
                     <Route
                         path="/login"
                         element={<Login users={users} setIsAuthenticated={setIsAuthenticated} />}
@@ -67,7 +63,7 @@ function App() {
                     {/* Directory Section */}
                     <Route path="/directorio" element={<Directory />} />
 
-                    {/* Analysis and Statistics */}
+                    {/* Analysis */}
                     <Route
                         path="/analisis"
                         element={
@@ -78,7 +74,6 @@ function App() {
                             )
                         }
                     />
-                    <Route path="/estadisticas" element={<Statistics />} />
 
                     {/* Contact */}
                     <Route path="/contacto" element={<Contact />} />
@@ -96,13 +91,13 @@ function App() {
                         element={<DeleteFile patientFiles={patientFiles} setPatientFiles={setPatientFiles} />}
                     />
 
-                    {/* Alerts Section */}
+                    {/* Alerts */}
                     <Route
                         path="/alerts"
                         element={<Alerts patientFiles={patientFiles} />}
                     />
 
-                    {/* Records Section */}
+                    {/* Records */}
                     <Route
                         path="/records"
                         element={<Records patientFiles={patientFiles} />}
@@ -112,7 +107,7 @@ function App() {
                         element={<RecordDetails patientFiles={patientFiles} />}
                     />
 
-                    {/* Add Data Section */}
+                    {/* Add Data */}
                     <Route
                         path="/add-data"
                         element={<AddData setPatientFiles={setPatientFiles} patientFiles={patientFiles} />}
