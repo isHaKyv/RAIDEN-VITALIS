@@ -19,6 +19,7 @@ import RecordDetails from './components/RecordDetails';
 import AddData from './components/AddData';
 import Login from './components/Login';
 import Register from './components/Register';
+import Graficas from './components/Graficas'; // Importamos el componente con su nombre correcto
 import './App.css';
 
 function App() {
@@ -37,6 +38,11 @@ function App() {
                 
                 <Route path="/estadisticas" element={<Statistics />} />
 
+                {/* Ruta para las gráficas en tiempo real - Asegúrate de que coincida con el Navbar */}
+                <Route 
+                    path="/graficas-tiempo-real" 
+                    element={<Graficas />} 
+                />
             
                     <Route
                         path="/login"

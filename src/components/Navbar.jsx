@@ -20,7 +20,8 @@ const Navbar = () => {
                     <li><Link to="/directorio">Directorios</Link></li>
                     <li><Link to="/contacto">Contacto</Link></li>
                     <li><Link to="/analisis" className="button">Análisis</Link></li>
-                    <li><Link to="/estadisticas">Estadísticas</Link></li> {/* Link to Stats.jsx */}
+                    <li><Link to="/estadisticas">Estadísticas</Link></li>
+                    <li><Link to="/graficas-tiempo-real">Monitoreo en Tiempo Real</Link></li> {/* Enlace a Graficas.jsx */}
                     <li><Link to="/alerts">Alertas</Link></li>
                     <li><Link to="/records">Registros</Link></li>
                     <li><Link to="/add-file">Agregar Archivo</Link></li>
